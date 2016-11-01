@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.example.LPMessagingSDK"
+        version="0.1.0">
+
+  <name>LPMessagingSDK</name>
+
+  <!--<engines>-->
+    <!--<engine name="cordova" version=">=3.4.0"/>-->
+  <!--</engines>-->
+<!---->
+  <asset src="www/lpMessagingSDK.js" target="js/lpMessagingSDK.js"/>
+
+
+  <js-module src="www/lpMessagingSDK.js" name="lpMessagingSDK">
+    <clobbers target="lpMessagingSDK" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="LPMessagingSDK" >
+        <param name="android-package" value="com.example.plugin.LPMessagingSDK"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/LPMessagingSDK.java" target-dir="src/com/example/plugin/" />
+
+    <!--<framework src="src/android/lpMessagingBuild.gradle" custom="true" type="gradleReference"/>-->
+  </platform>
+
+</plugin>
