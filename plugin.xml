@@ -3,7 +3,7 @@
         id="com.example.LPMessagingSDK"
         version="0.1.0">
 
-  <name>LPMessagingSDK</name>
+  <name>lpMessagingSDK</name>
 
   <!--<engines>-->
     <!--<engine name="cordova" version=">=3.4.0"/>-->
