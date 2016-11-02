@@ -1,28 +1,24 @@
-//var exec = require('cordova/exec');
-//
-//function LPMessagingSDK() {
-// console.log("LPMessagingSDK.js: is created");
-//}
-//
-//LPMessagingSDK.prototype.startConversation = function(aString){
-// console.log("LPMessagingSDK.js: startConversation");
-//
-// exec(function(result){
-//     /*alert("OK" + reply);*/
-//   },
-//  function(result){
-//    /*alert("Error" + reply);*/
-//   },"LPMessagingSDK",aString,[]);
-//}
-//
-// var lpMessagingSDK = new LPMessagingSDK();
-// module.exports = LPMessagingSDK;
+/*global cordova, module
+Example JS call:
+    var success = function(message) {
+        console.log("OnEvent JS: " + message)
+    }
 
+    var failure = function() {
+        console.log("Error calling lp_conversation_api Plugin");
+    }
+    var action = lp_sdk_init; or var action = start_lp_conversation;
+    var accountId = xxxx;
 
-/*global cordova, module*/
+    lpMessagingSDK.lp_conversation_api(action, accountId, success, failure);
+*/
 
 module.exports = {
-    greet: function (accountId, successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "LPMessagingSDK", "startConversation", [accountId]);
+
+    lp_conversation_api: function (action, accountId, successCallback, errorCallback) {
+
+        cordova.exec(successCallback, errorCallback, "LPMessagingSDK", action, [accountId]);
+
     }
+
 };
